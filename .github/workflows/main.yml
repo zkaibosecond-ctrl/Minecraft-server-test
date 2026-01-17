@@ -1,0 +1,15 @@
+name: CI
+
+on: [push, workflow_dispatch] # workflow_dispatch allows manual triggering for debugging
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        name: Check out repository code
+
+      # ... other steps in your workflow ...
+
+      - name: Start an 
