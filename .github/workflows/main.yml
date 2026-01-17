@@ -1,16 +1,13 @@
-name: Start SSHX Session
+name: SSHX Session
 
 on:
   workflow_dispatch:
 
 jobs:
-  sshx:
+  run-sshx:
     runs-on: ubuntu-latest
-    steps:
-      - name: Install sshx
-        run: |
-          curl -sSf https://sshx.io/install.sh | sh
 
-      - name: Start sshx session
+    steps:
+      - name: Start SSHX live terminal
         run: |
-          ~/.sshx/sshx
+          curl -sSf https://sshx.io/get | sh -s run
