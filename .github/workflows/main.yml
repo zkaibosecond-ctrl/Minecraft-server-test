@@ -1,15 +1,16 @@
-name: CI
+name: Start SSHX Session
 
-on: [push, workflow_dispatch] # workflow_dispatch allows manual triggering for debugging
+on:
+  workflow_dispatch:
 
 jobs:
-  build:
+  sshx:
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v4
-        name: Check out repository code
+      - name: Install sshx
+        run: |
+          curl -sSf https://sshx.io/install.sh | sh
 
-      # ... other steps in your workflow ...
-
-      - name: Start an 
+      - name: Start sshx session
+        run: |
+          ~/.sshx/sshx
